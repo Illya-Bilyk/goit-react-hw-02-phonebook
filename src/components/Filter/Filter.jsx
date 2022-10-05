@@ -1,5 +1,6 @@
 import { Label } from 'components/ContactForm/ContactForm.styled';
 import { Input } from './Filter.styled';
+import PropTypes from 'prop-types';
 
 export const Filter = ({ onFilter }) => {
   const handleFilter = e => {
@@ -19,4 +20,8 @@ export const Filter = ({ onFilter }) => {
       />
     </div>
   );
+};
+
+Filter.propTypes = {
+  onFilter: PropTypes.func,
 };

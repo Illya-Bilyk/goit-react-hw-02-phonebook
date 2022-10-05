@@ -1,12 +1,13 @@
 import { List, Delete, Item } from './ContactList.styled';
+import PropTypes from 'prop-types';
 
 export const ContactList = ({ contacts, onDelete }) => {
   const deleteContact = e => {
-    const deletingName = contacts.filter(
+    const deletingName = contacts.find(
       contact => contact.name === e.target.name
     );
 
-    onDelete(deletingName[0]);
+    onDelete(deletingName);
   };
 
   return (
@@ -24,4 +25,9 @@ export const ContactList = ({ contacts, onDelete }) => {
       })}
     </List>
   );
+};
+
+ContactList.propTypes = {
+  contacts: PropTypes.array,
+  onDelete: PropTypes.func,
 };
