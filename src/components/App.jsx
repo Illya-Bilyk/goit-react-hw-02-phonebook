@@ -31,7 +31,7 @@ export class App extends Component {
 
   filterContacs = keyWord => {
     this.setState({ filter: keyWord });
-    console.log(this.newContactList());
+    // console.log(this.newContactList());
   };
 
   newContactList = () => {
